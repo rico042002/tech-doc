@@ -9,45 +9,105 @@
 </head>
 <body>
     <nav id="navbar">
-        <header>A brief intro to C++</header>
-        <a href="#Errors" class="nav-link">Errors</a>
+        <header>C++ Basics</header>
+        <a href="#Hello_World" class="nav-link">Hello world</a>
         <a href="#Variables" class="nav-link">Variables</a>
         <a href="#Comments" class="nav-link">Comments</a>
         <a href="#Input_and_Output" class="nav-link">Input and Output</a>
         <a href="#Basic_Conditionals" class="nav-link">Basic Conditionals</a>
     </nav>
     <main id="main-doc">
-        <section class="main-section" id="Errors">
-            <header>Errors</header>
-            <h5>Compile-time errors:</h5> 
-            <p>Errors found by the compiler.</p>
-    
-                <h5>There are two types of compile-time errors:</h5>
-                <ol>
-                <li>Syntax errors**: Errors that occur when we violate the rules of C++ syntax.</li>
-                    
-                    <h5>Some common syntax errors are:</h5>
-                    <ul>
-                    <li>Missing semicolon `;`</li>
-                    <li>Missing closing parenthesis `)`, square bracket `]`, or curly brace `}`</li>
-                </ul>
-               <li>Type errors**: Errors that occur when there are mismatch between the types we declared.</li>
-                    
-                    Some common type errors are:
-                    
-                    - Forgetting to declare a variable
-                    - Storing a value into the wrong type
-                </ol>
-            <p></p>
+        <section class="main-section" id="Hello_World">
+            <header>Hello World</header>
+            <h4>Hello World Program in C++</h4>
+            <code><pre>
+ /*
+ * Multiple line
+ * comment
+ */
+ #include &lt;iostream&gt;
+     
+ //Single line comment
+ using namespace std;
+ 
+ //This is where the execution of program begins
+ int main()
+ {
+    // displays Hello World! on screen
+    cout<<"Hello World!";
+ 
+     return 0;
+ }
+                </pre></code>
+                <p><strong>Output:</strong></p>
+            <code><pre>Hello World!</pre></code>
+            <p>Let’s discuss each and every part of the above program.</p>
+            <ol>
+                <li>
+                    <strong>Comments</strong> - You can see two types of comments in the above program
+                    <code><pre>
+ // This is a single line comment
+ /* This is a multiple line comment
+ * suitable for long comments
+ */
+                    </pre></code>
+                    <p>Comments as the names suggests are just a text written by programmer during code development. Comment doesn’t affect your program logic in any way, you can write whatever you want in comments but it should be related to the code and have some meaning so that when someone else look into your code, the person should understand what you did in the code by just reading your comment.</p>
+                    <p>For example:</p>
+                    <code><pre>
+ /* This function adds two integer numbers 
+ * and returns the result as an integer value
+ */
+  int sum(int num1, int num2) {
+     return num1+num2;
+  }
+                    </pre></code>
+                    <p>Now if someone reads my comment he or she can understand what I did there just by reading my comment. This improves readability of your code and when you are working on a project with your team mates, this becomes essential aspect.</p>
+                </li>
+                <li>
+                <strong>#include&lt;iostream&gt;</strong> - This statements tells the compiler to include iostream file. This file contains pre defined input/output functions that we can use in our program.
+                </li>
+                <br>
+                <li>
+                    <strong>using namespace std;</strong> - A namespace is like a region, where we have functions, variables etc and their scope is limited to that particular region. Here std is a namespace name, this tells the compiler to look into that particular region for all the variables, functions, etc. I will not discuss this in detail here as it may confuse you. I have covered this topic in a separate tutorial with examples. Just follow the tutorial in the given sequence and you would be fine.
+                </li>
+                <br>
+                <li>
+                    <strong>int main()</strong> - As the name suggests this is the main function of our program and the execution of program begins with this function, the int here is the return type which indicates to the compiler that this function will return a integer value. That is the main reason we have a return 0 statement at the end of main function.
+                </li>
+                <br>
+                <li>
+                    <strong>cout &lt;&lt; “Hello World!”;</strong> - The <mark>cout</mark> object belongs to the iostream file and the purpose of this object is to display the content between double quotes as it is on the screen. This object can also display the value of variables on screen.
+                </li>
+                <br>
+                <li>
+                    <strong>return 0;</strong> - This statement returns value 0 from the main() function which indicates that the execution of main function is successful. The value 1 represents failed execution.
+                </li>
+            </ol>
         </section>
         <section class="main-section" id="Variables">
             <header>Variables</header>
             <p>
-                <code></code>
+                A variable is a name which is associated with a value that can be changed. For example when I write int num=20; here variable name is num which is associated with value 20, int is a data type that represents that this variable can hold integer values. We will cover the data types in the next tutorial. In this tutorial, we will discuss about variables.
             </p>
-            <p>
-                <code></code>
-            </p>
+            <h4>Syntax of declaring a variable in C++</h4>
+            <code>data_type variable1_name = value1, variable2_name = value2;</code>
+            <p><strong>For example:</strong></p>
+            <code>int num1=20, num2=100;</code>
+            <p>We can also write it like this:</p>
+                <code><pre>
+ int num1,num2;
+ num1=20;
+ num2=100;
+                </pre></code>
+                <h4>Types of variables based on their scope</h4>
+                <p>Before going further lets discuss what is scope first. When we discussed the Hello World Program, we have seen the curly braces in the program like this:</p>
+                <code><pre>
+ int main {
+ 
+     //Some code
+     
+     }
+        </pre></code>
         </section>
         <section class="main-section" id="Comments">
             <header>Comments</header>

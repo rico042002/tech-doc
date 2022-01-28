@@ -36,3 +36,11 @@ body {
     #navbar {padding-top: 15px;}
     #navbar a {font-size: 18px;}
   }
+
+  code, code pre{
+    background-color: lightgray;
+  }
+
+  mark {
+    background-color: lightgray;
+  }
