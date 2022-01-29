@@ -12,9 +12,9 @@
         <header>C++ Basics</header>
         <a href="#Hello_World" class="nav-link">Hello world</a>
         <a href="#Variables" class="nav-link">Variables</a>
-        <a href="#Comments" class="nav-link">Comments</a>
-        <a href="#Input_and_Output" class="nav-link">Input and Output</a>
-        <a href="#Basic_Conditionals" class="nav-link">Basic Conditionals</a>
+        <a href="#Data_Types" class="nav-link">Data Types</a>
+        <a href="#Operators" class="nav-link">Operators</a>
+        <a href="#If_Else" class="nav-link">If Else</a>
     </nav>
     <main id="main-doc">
         <section class="main-section" id="Hello_World">
@@ -108,35 +108,146 @@
      
      }
         </pre></code>
+        <p>Any variable declared inside these curly braces have scope limited within these curly braces, if you declare a variable in main() function and try to use that variable outside main() function then you will get compilation error.</p>
+        <p>Now that we have understood what is scope. Lets move on to the types of variables based on the scope.</p>
+        <ol>
+            <li>Global variable</li>
+            <li>Local variable</li>
+        </ol>
+        <h5>Global Variable</h5>
+        <p>A variable declared outside of any function (including main as well) is called global variable. Global variables have their scope throughout the program, they can be accessed anywhere in the program, in the main, in the user defined function, anywhere.</p>
+        <p>Lets take an example to understand it:</p>
+        <p><strong>Global variable example</strong></p>
+        <p>Here we have a global variable myVar, that is declared outside of main. We have accessed the variable twice in the main() function without any issues.</p>
+        <code><pre>
+ #include &lt;iostream&gt;
+ using namespace std;
+ // This is a global variable
+ char myVar = 'A';
+ int main()
+ {
+    cout &lt;&lt;"Value of myVar: "&lt;&lt; myVar&lt;&lt;endl;
+    myVar='Z';
+    cout &lt;&lt;"Value of myVar: "&lt;&lt; myVar;
+    return 0;
+ }
+        </pre></code>
+        <p><strong>Output:</strong></p>
+        <code><pre>
+ Value of myVar: A
+ Value of myVar: Z
+        </pre></code>
+        <h5>Local variable</h5>
+        <p>Local variables are declared inside the braces of any user defined function, main function, loops or any control statements(if, if-else etc) and have their scope limited inside those braces.</p>
+        <p><strong>Local variable example</strong></p>
+        <code><pre>
+            #include <iostream>
+ using namespace std;
+ 
+ char myFuncn() {
+ // This is a local variable
+ char myVar = 'A';
+ }
+ int main()
+ {
+    cout &lt;&lt;"Value of myVar: "&lt;&lt; myVar&lt;&lt;endl;
+    myVar='Z';
+    cout &lt;&lt;"Value of myVar: "&lt;&lt; myVar;
+    return 0;
+ }
+        </pre></code>
+        <p><strong>Output:</strong></p>
+        <p>Compile time error, because we are trying to access the variable myVar outside of its scope. The scope of myVar is limited to the body of function myFuncn(), inside those braces.</p>
         </section>
-        <section class="main-section" id="Comments">
-            <header>Comments</header>
+        <section class="main-section" id="Data_Types">
+            <header>Data Types</header>
             <p>
-                <code></code>
+            Data types define the type of data a variable can hold, for example an integer variable can hold integer data, a character type variable can hold character data etc.
             </p>
-            <p></p>
+            <p>Data types in C++ are categorised in three groups: <strong>Built-in</strong>, <strong>user-defined</strong> and <strong>Derived</strong>.</p>
+            <h5>Built in data types</h5>
+            <p><strong>char</strong>: For characters. Size 1 byte.</p>
+            <code>char ch = 'A';</code>
+            <p><strong>int</strong>: For integers. Size 2 bytes.</p>
+            <code>int num = 100;</code>
+            <p><strong>float</strong>: For single precision floating point. Size 4 bytes.</p>
+            <code>float num = 123.78987;</code>
+            <p><strong>double</strong>: For double precision floating point. Size 8 bytes.</p>
+            <code>double num = 10098.98899;</code>
+            <p><strong>bool</strong>: For booleans, true or false.</p>
+            <code>bool b = true;</code>
+            <p><strong>wchar_t</strong>: Wide Character. This should be avoided because its size is implementation defined and not reliable.</p>
+            <h5>User-defined data types</h5>
+            <p>We have three types of user-defined data types in C++</p>
+            <ol>
+                <li>struct</li>
+                <li>union</li>
+                <li>enum</li>
+            </ol>
+            <h5>Derived data types in C++</h5>
+            <p>We have three types of derived-defined data types in C++</p>
+            <ol>
+                <li>Array</li>
+                <li>Function</li>
+                <li>Pointer</li>
+            </ol>
         </section>
-        <section class="main-section" id="Input_and_Output">
-            <header>Input and Output</header>
+        <section class="main-section" id="Operators">
+            <header>Operators</header>
             <p>
-                <code></code>
+                Operator represents an action. For example + is an operator that represents addition. An operator works on two or more operands and produce an output. For example 3+4+5 here + operator works on three operands and produce 12 as output.
             </p>
-            <p></p>
+        <h5>Types of Operators in C++</h5>
+        <ol>
+            <li>Basic Arithmetic Operators</li>
+            <li>Assignment Operators</li>
+            <li>Auto-increment and Auto-decrement Operators</li>
+            <li>Logical Operators</li>
+            <li>Comparison (relational) operators</li>
+            <li>Bitwise Operators</li>
+            <li>Ternary Operator</li>
+        </ol>
+        <h5>Basic Arithmetic Operators</h5>
+        <p>Basic arithmetic operators are: +, -, *, /, %</p>
+        <p><strong>+</strong> is for addition.</p>
+        <p><strong>-</strong> is for subtraction.</p>
+        <p><strong>*</strong> is for multiplication.</p>
+        <p><strong>/</strong> is for division.</p>
+        <p><strong>%</strong> is for modulo.</p>
+        <p><strong>Note:</strong> Modulo operator returns remainder, for example 20 % 5 would return 0</p>
+        <h6>Example of Arithmetic Operators</h6>
+        <code><pre>
+ #include <iostream>
+ using namespace std;
+ int main(){
+   int num1 = 240;
+   int num2 = 40;
+   cout&lt;&lt;"num1 + num2: "&lt;&lt;(num1 + num2)&lt;&lt;endl;
+   cout&lt;&lt;"num1 - num2: "&lt;&lt;(num1 - num2)&lt;&lt;endl;
+   cout&lt;&lt;"num1 * num2: "&lt;&lt;(num1 * num2)&lt;&lt;endl;
+   cout&lt;&lt;"num1 / num2: "&lt;&lt;(num1 / num2)&lt;&lt;endl;
+   cout&lt;&lt;"num1 % num2: "&lt;&lt;(num1 % num2)&lt;&lt;endl;
+   return 0;
+ }
+        </pre></code>
         </section>
-        <section class="main-section" id="Basic_Conditionals">
-            <header>Basic Conditionals</header>
-            <p>
-                <code></code>
-            </p>
-            <p>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </p>
+        <section class="main-section" id="If_Else">
+            <header>If Else</header>
+          <p>Sometimes we need to execute a block of statements only when a particular condition is met or not met. This is called decision making, as we are executing a certain code after making a decision in the program logic. For <strong>decision making</strong> in C++, we have four types of control statements (or control structures), which are as follows:</p>
+          <ol type="a">
+              <li>if statement</li>
+              <li>nested if statement</li>
+              <li>if-else statement</li>
+              <li>if-else-if statement</li>
+          </ol>
+          <h5>If statement in C++</h5>
+          <p>If statement consists a condition, followed by statement or a set of statements as shown below:</p>
+          <code><pre>
+ if(condition){
+     Statement(s);
+   }
+          </pre></code>
+          <p>The statements inside if parenthesis (usually referred as if body) gets executed only when the given condition is true. If the condition is false then the statements inside if body are completely ignored.</p>
         </section>    
     </main>
 
